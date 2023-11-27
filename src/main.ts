@@ -1,11 +1,15 @@
-import App from './App.svelte'
+import Counter from './components/Counter.svelte';
+import Greeter from './components/Greeter.svelte';
 
-export { default as Counter } from './components/Counter.svelte';
-export { default as Greeter } from './components/Greeter.svelte';
-
-const app = new App({
-  target: document.getElementById('app'),
-})
-
-
-export default app
+export default {
+    routes: {
+        '/': {
+            title: 'Home',
+            component: Greeter,
+        },
+        '/counter': {
+            title: 'Counter',
+            component: Counter,
+        },
+    },
+};
